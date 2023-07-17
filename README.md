@@ -1,2 +1,2 @@
 # joblisting-frontend
-Job posint website
+Job posting - frontend using React JS
