@@ -18,13 +18,15 @@ const Jobs = () => {
       });
   }, []);
 
-  const truncateDescription = (description, wordLimit) => {
+  const truncate = (description, wordLimit) => {
     const words = description.split(' ');
     if (words.length > wordLimit) {
       return words.slice(0, wordLimit).join(' ') + '...';
     }
     return description;
   };
+
+ 
 
   return (
     <div className="container my-3">
@@ -34,7 +36,7 @@ const Jobs = () => {
             <div className="col mb-4" key={element.id}>
               <Job
                 profile={element.profile ? element.profile : ''}
-                description={truncateDescription(element.desc, 6)}
+                description={truncate(element.desc, 6)}
                 techstack={element.techStack}
                 id={element.id}
               />
