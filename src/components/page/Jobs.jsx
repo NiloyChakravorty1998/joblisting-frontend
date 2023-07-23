@@ -26,7 +26,13 @@ const Jobs = () => {
     return description;
   };
 
- 
+  const truncateSkills = (skills, characterLimit) => {
+    if (skills.length > characterLimit) {
+      return skills.slice(0, characterLimit) + '...';
+    }
+    return skills;
+  };
+  
 
   return (
     <div className="container my-3">
@@ -37,8 +43,10 @@ const Jobs = () => {
               <Job
                 profile={element.profile ? element.profile : ''}
                 description={truncate(element.desc, 6)}
-                techstack={element.techStack}
+                techstack={truncateSkills(element.techStack, 6)}
+                imageURL={element.imageUrl}
                 id={element.id}
+                location={element.location}
               />
             </div>
           ))
