@@ -30,6 +30,8 @@ const JobItem = () => {
       <div className="container p-4">
         {job ? (
           <div>
+            <img src={job.imageUrl} style={{ maxWidth: "120px", maxHeight: "120px", display: "block", margin: "0 auto" }} className="card-img-top" alt="..." />
+            <br></br>
             <h5 className="text-center mb-4">{job.profile}</h5>
             <div className="card mx-auto" style={{ width: 'calc(100% + 20px)', backgroundColor: '#eeeeee', borderRadius: '0.25rem', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
               <div className="card-body" >
