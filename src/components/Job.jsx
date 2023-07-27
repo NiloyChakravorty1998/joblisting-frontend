@@ -19,10 +19,10 @@ const Job = (props) => {
             <br></br>
           </center>
 
-          <h6 style={{ fontSize: '15px', fontWeight: 'bold', color: '#6B7171' }}>Description:</h6>
+          <h6 style={{ fontSize: '15px', fontWeight: 'bold', color: '#3F4447' }}>Description:</h6>
           <p className="card-text">{description}...</p>
 
-          <h6 style={{ fontSize: '15px', fontWeight: 'bold', marginTop: '10px', color: '#757575' }}>Skills:</h6>
+          <h6 style={{ fontSize: '15px', fontWeight: 'bold', marginTop: '10px', color: '#3F4447' }}>Skills:</h6>
           {Array.isArray(techstack) ? (
             <p className="card-text" style={{color: '#154c79'}}>{techstack.join(', ')}</p>
           ) : (
