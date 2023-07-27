@@ -1,32 +1,41 @@
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const JobItem = () => {
-    let {jobId} = useParams();
-    const [job, setJob] = useState(null);
-    const handleDelete = () => {
+  let { jobId } = useParams();
+  const [job, setJob] = useState(null);
+  const handleDelete = () => {
+    fetch(`http://localhost:8080/api/post/${jobId}`, {
+      method: 'DELETE'
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.href = "/jobs"
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-    }
-    const handleUpdate = () => {
-      
-    }
-    useEffect(() => {
-        fetch(`http://localhost:8080/api/post/${jobId}`, {
-            method: 'GET',
+  }
+  const handleUpdate = () => {
+    window.location.href=`/job/update/${jobId}`;  
+  }
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/post/${jobId}`, {
+      method: 'GET',
 
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              console.log(data);
-              setJob(data);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }, []);
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setJob(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
-    
-       <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 'calc(100vh - 56px)', backgroundColor: '#eeeeee' }}>
+
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 'calc(100vh - 56px)', backgroundColor: '#eeeeee' }}>
       <div className="container p-4">
         {job ? (
           <div>
@@ -35,9 +44,9 @@ const JobItem = () => {
             <h5 className="text-center mb-4">{job.profile}</h5>
             <div className="card mx-auto" style={{ width: 'calc(100% + 20px)', backgroundColor: '#eeeeee', borderRadius: '0.25rem', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
               <div className="card-body" >
-                <h6 style={{fontSize: '19px', color: '#6B7171',}}>Description :</h6>
-                <p className="card-text" style={{fontSize: '15px'}}>{job.desc}</p>
-                
+                <h6 style={{ fontSize: '19px', color: '#6B7171', }}>Description :</h6>
+                <p className="card-text" style={{ fontSize: '15px' }}>{job.desc}</p>
+
                 <center>
                   <p className="card-text" style={{ color: '#154c79', fontWeight: 'bold' }}>{job.techStack}</p>
                   <p className="card-text" style={{ color: '#404D4D', fontWeight: 'bold' }}>{job.location}</p>
@@ -55,7 +64,7 @@ const JobItem = () => {
         )}
       </div>
     </div>
-    
+
   )
 }
 
