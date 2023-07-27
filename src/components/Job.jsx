@@ -9,7 +9,7 @@ const Job = (props) => {
 
   return (
     <div className="my-3">
-      <div className="card" style={{ backgroundColor: '#eeeeee' }}>
+      <div className="card" style={{ backgroundColor: '#eeeeee', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
         <img src={imageURL} style={{ maxWidth: "120px", maxHeight: "120px", display: "block", margin: "0 auto" }} className="card-img-top" alt="..." />
         <div className="card-body">
           <center>
@@ -19,14 +19,14 @@ const Job = (props) => {
             <br></br>
           </center>
 
-          <h6 style={{ fontSize: '15px', fontWeight: 'bold' }}>Description:</h6>
+          <h6 style={{ fontSize: '15px', fontWeight: 'bold', color: '#6B7171' }}>Description:</h6>
           <p className="card-text">{description}...</p>
 
-          <h6 style={{ fontSize: '15px', fontWeight: 'bold', marginTop: '10px' }}>Skills:</h6>
+          <h6 style={{ fontSize: '15px', fontWeight: 'bold', marginTop: '10px', color: '#757575' }}>Skills:</h6>
           {Array.isArray(techstack) ? (
-            <p className="card-text">{techstack.join(', ')}</p>
+            <p className="card-text" style={{color: '#154c79'}}>{techstack.join(', ')}</p>
           ) : (
-            <p className="card-text">{techstack}</p>
+            <p className="card-text" >{techstack}</p>
           )}
 
           <center>
