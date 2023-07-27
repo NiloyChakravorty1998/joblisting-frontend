@@ -32,7 +32,15 @@ const Jobs = () => {
     }
     return skills;
   };
-  
+  if(jobList.length==0){
+    return(
+      <div className="d-flex justify-content-center align-items-top my-2" style={{ minHeight: '100vh', fontSize: '60px' }}>   
+      <div className="spinner-border text-primary" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    )
+  }
 
   return (
     <div className="container my-3">
