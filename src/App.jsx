@@ -5,6 +5,7 @@ import Jobs from './components/page/Jobs';
 import Home from './components/page/Home';
 import JobItem from './components/page/JobItem';
 import UpdateJob from './components/page/UpdateJob';
+import AddJob from './components/page/AddJob';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route exact path='/jobs' element={<Jobs />} />
             <Route exact path='/job/:jobId' element={<JobItem />} />
             <Route exact path='/job/update/:jobId' element={<UpdateJob />} />
+            <Route exact path ='/newjob' element={<AddJob/>}/>
           </Routes>
         </Router>
       </div>

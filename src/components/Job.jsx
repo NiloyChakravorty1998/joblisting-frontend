@@ -4,7 +4,7 @@ const Job = (props) => {
   const {id, profile, description, techstack, imageURL } = props;
 
   const handleJob = () => {
-    window.location.href = `/job/${id}`;
+    window.location = `/job/${id}`;
   };
 
   return (

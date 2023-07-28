@@ -46,8 +46,8 @@ const UpdateJob = () => {
                 experience:exp
             })
         }).then((res) => {
-            res.json().then((data) => {
-                window.location.href("/jobs");
+            res.json().then(() => {
+                window.location = '/jobs';
             })
         })
     }
@@ -113,10 +113,7 @@ const UpdateJob = () => {
               </form>
             </div>
           </div>
-        );
-      
-      
-      
+        );      
 }
 
 export default UpdateJob

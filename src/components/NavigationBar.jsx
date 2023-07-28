@@ -15,7 +15,7 @@ const NavigationBar = () => {
                                 <Link className="nav-link active text-white" style={{fontSize:"20px"}} aria-current="page" to="/jobs">Jobs</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active text-white mx-3" style={{fontSize:"20px"}} aria-current="page" to="/about">About</Link>
+                                <Link className="nav-link active text-white mx-3" style={{fontSize:"20px"}} aria-current="page" to="/newjob">Add Job</Link>
                             </li>
 
                         </ul>

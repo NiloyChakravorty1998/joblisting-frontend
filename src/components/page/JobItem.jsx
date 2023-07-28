@@ -9,8 +9,8 @@ const JobItem = () => {
       method: 'DELETE'
       })
       .then((res) => res.json())
-      .then((data) => {
-        window.location.href = "/jobs"
+      .then(() => {
+        window.location = "/jobs"
       })
       .catch((error) => {
         console.log(error);
